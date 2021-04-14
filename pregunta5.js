@@ -20,3 +20,14 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+function replaceName (beers){
+  beers.forEach(element => {
+    let labelSplit = element.label.split('/');
+    let name = labelSplit[labelSplit.length-1];
+    let nameWithOutSpace = element.name.replace(" ","");
+    element.label = element.label.replace(name, nameWithOutSpace)
+  });
+  return beers;
+}
+
+console.log(replaceName(beers));

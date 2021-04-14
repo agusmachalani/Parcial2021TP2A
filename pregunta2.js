@@ -15,6 +15,13 @@
   }
 
 const sale = function (article, cant){
+  if(parseInt(cant) <= inventory[article]){
+    inventory[article] = inventory[article] - cant
+    return 200;
+  }
+  if(cant > inventory[article]){
+    return 500;
+  }
   
 }
 

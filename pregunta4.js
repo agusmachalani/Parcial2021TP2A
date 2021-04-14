@@ -22,11 +22,12 @@
    * @param {*} inventors 
    */
   function addDiscoveries(inventor, discoveries, inventors){
-      
+    inventors.forEach(element => {
+      if(element.last == inventor) element.discoveries = discoveries; 
+    });
+    return inventors;
   }
 
-  console.log(addDescubrimientos('Einstein', 
-  ['Teoría de la relatividad especial','Equivalencia entre masa y energía','Teoría de la relatividad general'], inventors
-  ));
+  console.log(addDiscoveries('Einstein', ['Teoría de la relatividad especial','Equivalencia entre masa y energía','Teoría de la relatividad general'], inventors));
 
   
